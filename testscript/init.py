@@ -5,6 +5,7 @@ import sys
 
 def main():
    generate_testdata()
+   exit(0)
 
 def generate_testdata():
    test_units = ['metric', 'celsius', 'electricity used']
