@@ -15,15 +15,15 @@ def generate_testdata():
       print('Passed arguments. Arguments are used as units for generation of metadata.')
       print('Arguments passed were: ' + ', '.join(argument_list))
       test_units = argument_list
-   
+
    statistic_list = []
 
    for i in [random.randint(i, 25) for i in range(0, 15)]:
        statistic_list.append(json.dumps(generateStatistic(test_units[random.randint(0, len(test_units)-1)], i)))
    print('Generated following mock data: ' + ', '.join(statistic_list))
-   
+   result_statistics = {"statistics":statistic_list}
    with open('execution_metadata.json', 'w') as outfile:
-       json.dump(statistic_list, outfile)
+       json.dump(result_statistics, outfile)
    print('Dumped results to execution_metadata.json.')
 
 def generateStatistic(unit, value):
