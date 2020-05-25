@@ -9,8 +9,6 @@ def main():
 def generate_testdata():
    test_units = ['metric', 'celsius', 'electricity used']
    print('Generating test metadata. Default test units are: ' + ', '.join(test_units))
-   console_file = open("console.txt","a") 
-   console_file.write('Generating test metadata. Default test units are: ' + ', '.join(test_units))
 
    if len(sys.argv) > 1:
       argument_list = sys.argv[1:]
