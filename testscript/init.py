@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import json
 import random
 import sys
@@ -12,6 +11,7 @@ def generate_testdata():
    print('Generating test metadata. Default test units are: ' + ', '.join(test_units))
    console_file = open("console.txt","a") 
    console_file.write('Generating test metadata. Default test units are: ' + ', '.join(test_units))
+
    if len(sys.argv) > 1:
       argument_list = sys.argv[1:]
       print('Passed arguments. Arguments are used as units for generation of metadata.')
@@ -19,7 +19,7 @@ def generate_testdata():
       test_units = argument_list
    
    statistic_list = []
-   
+
    for i in [random.randint(i, 25) for i in range(0, 15)]:
        statistic_list.append(json.dumps(generateStatistic(test_units[random.randint(0, len(test_units)-1)], i)))
    print('Generated following mock data: ' + ', '.join(statistic_list))
